@@ -1,13 +1,11 @@
 from Blade import *
 
 class Handle(Blade):
-    def __init__(self, x, win, y = 310, x2 = 415, y2 = 325):
+    def __init__(self, x, win, y = 310):
         super(Handle, self).__init__(x, win, y, color = "red", width = 298, height = 30)
         self.drawHandle("gray", win)
-        self.drawButton(win, x2, y2)
-        self.drawButton(win, x2, y2 + 150)
-        self.drawButton(win, x2, y2 - 150)
         self.drawLine(win)
+
 
     def drawHandle(self, color, win):
         hand = Rectangle(Point(self.x + 298, self.y), Point(self.x + 502, self.y + 30))
@@ -27,6 +25,9 @@ class Handle(Blade):
     def drawButton(self, win, x, y, addedX = 34):
         for button in range(4):
             button = Circle(Point(x + addedX, y), 6)
-            button.setFill("red")
+            button.setFill("white")
             button.draw(win)
             addedX += 34
+            time.sleep(.2)
+            button.setFill(self.color)
+        
