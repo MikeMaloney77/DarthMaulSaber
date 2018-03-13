@@ -24,12 +24,11 @@ class Blade(object):
         blade2.draw(win)
 
     # def drawEndCap(self, win):
-    #     """Creates the ends of the lightsaber"""
+    #      """Creates the ends of the lightsaber"""
     #
     #     endCap1 = Arc(Point(self.x + 500 + self.width, self.y), Point(self.x + 500, self.y + 60), 0, 90, "CHORD")
     #
     #     endCap1.draw(win)
-
 
 
 
