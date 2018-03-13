@@ -1,10 +1,12 @@
 from Blade import *
 
 class Handle(Blade):
-    def __init__(self, x, win):
-        super(Handle, self).__init__(x, win, y = 310, color = "red", width = 298, height = 30)
+    def __init__(self, x, win, y = 310, x2 = 415, y2 = 325):
+        super(Handle, self).__init__(x, win, y, color = "red", width = 298, height = 30)
         self.drawHandle("gray", win)
-        self.drawButton(win, 415, 325)
+        self.drawButton(win, x2, y2)
+        self.drawButton(win, x2, y2 + 150)
+        self.drawButton(win, x2, y2 - 150)
         self.drawLine(win)
 
     def drawHandle(self, color, win):
@@ -28,5 +30,3 @@ class Handle(Blade):
             button.setFill("red")
             button.draw(win)
             addedX += 34
-
-
