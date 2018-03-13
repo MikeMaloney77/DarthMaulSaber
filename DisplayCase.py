@@ -1,4 +1,3 @@
-from Graphics import*
 from LightSaberHandle import *
 
 class DisplayCase(object):
