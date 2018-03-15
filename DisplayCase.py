@@ -30,6 +30,7 @@ class DisplayCase(object):
         handle3.drawButton(win, 415, 475)
         handle3.changeBladeColor(win)
 
+
     def buildCase(self, win, x1, y1):
         """Builds display case"""
         shelfFront = Rectangle(Point(x1, y1), Point(x1 + self.length, y1 + self.widthHeight))
@@ -47,7 +48,7 @@ class DisplayCase(object):
 
     def logo(self, win):
         """This imports the starwars logo"""
-        sW = Image(Point(1250, 585), "StarWarsLogo.png")
+        sW = Image(Point(1250, 590), "StarWarsLogo.png")
         sW.draw(win)
         for i in range(75):
             sW.move(-10,0)
@@ -72,9 +73,8 @@ class DisplayCase(object):
 
     def darthMaul(self, win):
         """This will place an image of darth maul in the code"""
-
-        dM = Image(Point(150, 585), "DarthMaul.png")
+        dM = Image(Point(-20, 600), "DarthMaul.png")
         dM.draw(win)
-        for i in range(65):
+        for i in range(87):
             dM.move(10,0)
             time.sleep(.012)
