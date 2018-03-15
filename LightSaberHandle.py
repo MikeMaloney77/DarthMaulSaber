@@ -5,9 +5,11 @@ class Handle(Blade):
         super(Handle, self).__init__(x, win, y, color = "red", width = 298, height = 30)
         self.drawHandle("gray", win)
         self.drawLine(win)
+        self.buttonPress(win)
 
 
     def drawHandle(self, color, win):
+        """Draws the lightsaber handle"""
         hand = Rectangle(Point(self.x + 298, self.y), Point(self.x + 502, self.y + 30))
         hand.setFill(color)
         hand.draw(win)
@@ -23,6 +25,7 @@ class Handle(Blade):
 
 
     def drawButton(self, win, x, y, addedX = 34):
+        """Draws buttons on the lightsaber"""
         for button in range(4):
             button = Circle(Point(x + addedX, y), 6)
             button.setFill("white")
@@ -30,4 +33,11 @@ class Handle(Blade):
             addedX += 34
             time.sleep(.2)
             button.setFill(self.color)
+            button.setActiveFill("white")
+
+    def buttonPress(self, userInput,win):
+        """This will make the lightsaber change color when you press the button"""
+        user = if userInput == "b":
+                self.changeBladeColor.setFill("blue")
+        user.draw(win)
         
