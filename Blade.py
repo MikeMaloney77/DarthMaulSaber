@@ -1,6 +1,5 @@
 from graphics import *
 
-
 class Blade(object):
     """creates a blade for the lightsaber"""
 
@@ -26,13 +25,12 @@ class Blade(object):
         blade2.setFill("white")
         blade2.setOutline("white")
         blade2.draw(win)
-
         time.sleep(.1)
 
 
 
     def changeBladeColor(self, win):
-        "This will change the color of the blade"
+        """This will change the color of the blade"""
         blade = Rectangle(Point(self.x, self.y), Point(self.x + self.width, self.y + self.height))
         blade2 = Rectangle(Point(self.x + 500, self.y), Point(self.x + 500 + self.width, self.y + self.height))
 
@@ -41,11 +39,10 @@ class Blade(object):
 
         blade2.setFill(self.color)
         blade2.undraw()
-
+        blade.setActiveFill("blue")
         time.sleep(.1)
-
+        blade2.setActiveFill("blue")
         blade2.draw(win)
         blade.draw(win)
-
 
 
