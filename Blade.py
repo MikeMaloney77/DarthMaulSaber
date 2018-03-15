@@ -3,7 +3,7 @@ from graphics import *
 class Blade(object):
     """creates a blade for the lightsaber"""
 
-    def __init__(self, x, win, y = 310, color = "red", width = 300, height = 30):
+    def __init__(self, x, y = 310, color = "red", width = 298, height = 30):
         self.x = x
         self.y = y
         self.color = color
@@ -44,5 +44,3 @@ class Blade(object):
         blade2.setActiveFill("blue")
         blade2.draw(win)
         blade.draw(win)
-
-
