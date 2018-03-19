@@ -1,34 +1,13 @@
 from LightSaberHandle import *
-
+import time
 class DisplayCase(object):
     def __init__(self, win, length = 900, widthHeight = 10):
         self.length = length
         self.widthHeight = widthHeight
-        self.buildCase(win, 50, 360)
-        self.buildCase(win, 50, 510)
-        self.buildCase(win, 50, 210)
-        self.rect(win, 260, 370)
-        self.rect(win, 710, 370)
-        self.rect(win, 710, 220)
-        self.rect(win, 710, 520)
-        self.rect(win, 260, 220)
-        self.rect(win, 260, 520)
-        self.logo(win)
-        self.explanation(win)
-        self.darthMaul(win)
-        handle1 = Handle(100, win, 160)
-        handle1.drawBlade(win)
-        time.sleep(.25)
-        handle1.drawButton(win, 415, 175)
-        handle1.changeBladeColor(win)
-        handle2 = Handle(100, win)
-        handle2.drawBlade(win)
-        handle2.drawButton(win, 415, 325)
-        handle2.changeBladeColor(win)
-        handle3 = Handle(100, win, 460)
-        handle3.drawBlade(win)
-        handle3.drawButton(win, 415, 475)
-        handle3.changeBladeColor(win)
+        self.handle1 = Handle(100, win, 160)
+        self.handle2 = Handle(100, win)
+        self.handle3 = Handle(100, win, 460)
+
 
 
     def buildCase(self, win, x1, y1):
@@ -53,11 +32,6 @@ class DisplayCase(object):
         for i in range(75):
             sW.move(-10,0)
             time.sleep(.032)
-        # for i in range(100):
-            # sW.draw(win)
-            # time.sleep(.01)
-            # sW.undraw()
-            # time.sleep(.01)
 
     def explanation(self, win):
         """Shows instructions"""
@@ -78,3 +52,30 @@ class DisplayCase(object):
         for i in range(87):
             dM.move(10,0)
             time.sleep(.012)
+
+    def drawDisplayCase(self, win):
+        self.buildCase(win, 50, 360)
+        self.buildCase(win, 50, 510)
+        self.buildCase(win, 50, 210)
+        self.rect(win, 260, 370)
+        self.rect(win, 710, 370)
+        self.rect(win, 710, 220)
+        self.rect(win, 710, 520)
+        self.rect(win, 260, 220)
+        self.rect(win, 260, 520)
+        self.logo(win)
+        self.explanation(win)
+        self.darthMaul(win)
+        self.handle1.drawHandle(win)
+        self.handle1.drawBlade(win)
+        time.sleep(.25)
+        self.handle1.drawButton(win, 415, 175)
+        self.handle1.changeBladeColor(win)
+        self.handle2.drawHandle(win)
+        self.handle2.drawBlade(win)
+        self.handle2.drawButton(win, 415, 325)
+        self.handle2.changeBladeColor(win)
+        self.handle3.drawHandle(win)
+        self.handle3.drawBlade(win)
+        self.handle3.drawButton(win, 415, 475)
+        self.handle3.changeBladeColor(win)
